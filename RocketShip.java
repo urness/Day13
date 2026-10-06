@@ -1,7 +1,7 @@
 /**
  * The RocketShip class represents a rocket ship that can be launched into space.
  */
-public class RocketShip {
+public class RocketShip implements Comparable<RocketShip>{
 
     private String name;
     private int fuel;
@@ -32,4 +32,16 @@ public class RocketShip {
     public String toString() {    
         return "Name: " + name + " Fuel: " + fuel + " " + "Speed: " + speed + " Alt: " + altitude;
     }
+
+    public int compareTo(RocketShip o) {
+        if (this.altitude > o.altitude) {
+            return 1;
+        } else if (this.altitude < o.altitude) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
+   
 }
